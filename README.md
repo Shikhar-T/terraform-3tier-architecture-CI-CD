@@ -1,6 +1,18 @@
 # 🚀 AWS 3-Tier Architecture using Terraform & CI/CD
 
-This project demonstrates a complete **3-tier architecture on AWS** using Terraform, including networking, compute, load balancing, and state management.
+This project demonstrates a complete **3-tier architecture on AWS** using Terraform, including networking, compute, load balancing, and remote state management.
+
+---
+
+## 🌍 Region
+
+All resources in this project are deployed in:
+
+```
+ap-southeast-1 (Singapore)
+```
+
+Make sure your AWS CLI and GitHub Actions are configured for the same region.
 
 ---
 
@@ -18,9 +30,44 @@ The infrastructure includes:
 
 ---
 
+## 🔐 IAM & Credentials (Important)
+
+* IAM user with programmatic access is required
+* Required permissions: `AdministratorAccess` (for demo purposes)
+* Credentials needed:
+
+```
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+```
+
+---
+
+## ⚙️ AWS CLI
+
+* AWS CLI must be configured with above credentials
+* Region used:
+
+```
+ap-southeast-1
+```
+
+---
+
+## ⚙️ GitHub Actions
+
+* Add the following secrets in your repository:
+
+```
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+```
+
+---
+
 ## ⚙️ CI/CD
 
-* GitHub Actions used for automated infrastructure deployment
+* GitHub Actions used for automated Terraform deployment
 * Terraform code is executed from the `infra/` directory
 * Backend (S3 + DynamoDB) is handled separately
 
@@ -32,17 +79,17 @@ To access EC2 instances:
 
 1. Manually create a key pair in AWS with name:
 
-   ```
-   my-key-sg.pem
-   ```
+```
+my-key-sg.pem
+```
 
 2. Download and store it securely
 
 3. Connect to EC2:
 
-   ```bash
-   ssh -i my-key-sg.pem ubuntu@<EC2-Public-IP>
-   ```
+```bash
+ssh -i my-key-sg.pem ubuntu@<EC2-Public-IP>
+```
 
 ---
 
@@ -79,6 +126,7 @@ This script will:
 * Backend resources (S3 & DynamoDB) should be created once
 * Always destroy infrastructure before backend
 * Ensure correct AWS region is configured before deployment
+* IAM credentials must be configured before running Terraform
 
 ---
 
