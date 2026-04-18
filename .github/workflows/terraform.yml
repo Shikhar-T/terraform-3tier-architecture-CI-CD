@@ -3,6 +3,9 @@ name: Full Terraform Deploy
 on:
   push:
     branches: ["main"]
+    paths:
+      - "infra/**"
+      - ".github/workflows/**"
 
 jobs:
   bootstrap:
