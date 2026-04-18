@@ -1,5 +1,6 @@
 # 🚀 AWS 3-Tier Architecture using Terraform & CI/CD
 
+##📌 Project Overview
 This project demonstrates a complete **3-tier architecture on AWS** using Terraform, including networking, compute, load balancing, and remote state management.
 
 ---
@@ -27,7 +28,7 @@ The infrastructure includes:
 * S3 bucket for Terraform state storage
 * DynamoDB table for state locking
 * Secure Security Groups configuration
-
+![AWS 3-Tier Architecture](assets/aws-3-tier.png)
 ---
 
 ## 🔐 IAM & Credentials (Important)
@@ -70,7 +71,7 @@ AWS_SECRET_ACCESS_KEY
 * GitHub Actions used for automated Terraform deployment
 * Terraform code is executed from the `infra/` directory
 * Backend (S3 + DynamoDB) is handled separately
-
+![CI/CD Pipeline](assets/cicd-success.png)
 ---
 
 ## 🔑 SSH Access (Important)
@@ -117,8 +118,9 @@ This script will:
 ├── bootstrap-backend/    # S3 + DynamoDB backend setup
 ├── destroy-all.sh        # Manual destroy script
 ├── .github/workflows/    # CI/CD pipelines
-```
 
+```
+![Project Structure](assets/project-tree.png)
 ---
 
 ## ⚠️ Important Notes
