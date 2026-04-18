@@ -1,6 +1,6 @@
 # 🚀 AWS 3-Tier Architecture using Terraform & CI/CD
 
-##📌 Project Overview
+## 📌 Project Overview
 This project demonstrates a complete **3-tier architecture on AWS** using Terraform, including networking, compute, load balancing, and remote state management.
 
 ---
